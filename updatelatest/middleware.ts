@@ -1,25 +1,12 @@
-// middleware.ts (at project root)
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server'
 
-// ...existing code...
-
-const middleware = clerkMiddleware({
-  publicRoutes: [
-    "/",
-    "/shop",
-    "/myaccount",
-    "/sign-in(.*)",
-    "/sign-up(.*)",
-    // Add any other public routes here
-  ],
-});
+export default clerkMiddleware()
 
 export const config = {
   matcher: [
-    // Match all request paths except for:
-    // - _next (Next.js internals)
-    // - static files
-    // - favicon.ico
-    "/((?!.*\\..*|_next|favicon.ico).*)",
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
   ],
-};
+}

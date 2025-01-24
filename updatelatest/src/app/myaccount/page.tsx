@@ -6,6 +6,7 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import AccountBanner from "../components/AccountBanner";
 
 import FeaturesSection from "../components/FeaturesSection";
+import Account from "../components/Account";
 
 const Myaccount = () => {
   return (
@@ -31,7 +32,7 @@ const Myaccount = () => {
       </SignedOut>
 
       <SignedIn>
-        <Myaccount />
+        <Account />
       </SignedIn>
 
       <FeaturesSection />

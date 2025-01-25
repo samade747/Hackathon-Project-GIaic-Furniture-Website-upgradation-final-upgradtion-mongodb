@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.9",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.68.3",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
-    "mongoose": "^8.9.5",
     "next": "^15.1.5",
     "next-sanity": "^9.8.31",
     "react": "^19.0.0",

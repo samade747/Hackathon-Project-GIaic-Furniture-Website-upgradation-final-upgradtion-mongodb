@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import { CartProvider } from "../context/CartContext";
 import { WishlistProvider } from "../context/WishlistContext";
 import Navbar from "./components/Navbar";
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        
+      <ClerkProvider>
         <CartProvider>
          
           <WishlistProvider>
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </WishlistProvider>
           
         </CartProvider>
-        
+        </ClerkProvider>
       </body>
     </html>
   );
